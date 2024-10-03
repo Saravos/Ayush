@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="index.js"></script>
+    <title>Form</title>
+    <link rel="icon" type="image/x-icon" href="./contact-form.png">
+</head>
+<body>
+    <div id="outerh">
+        <h1>Form</h1>
+    </div>
+    <br>
+    <form style="width: 30cm;" autocomplete="on" name="userForm" id="form">
+        <fieldset style="width:auto;" id="field">
+            <br>
+            <div>
+                <label for="userFirstName" class="block text-gray-800 font-semibold text-sm">
+                    <h4>First Name</h4>
+                </label>
+                <input type="text" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" required name="firstName" id="userFirstName" placeholder="Enter First Name"/>
+            </div>
+            <br>
+            <div>
+                <label for="userLastName" class="block text-gray-800 font-semibold text-sm">
+                    <h4>Last Name</h4>
+                </label>
+                <input type="text" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" required name="lastName" id="userLastName" placeholder="Enter Last Name"/>
+            </div>
+            <br>
+            <label for="gender"><h5>Gender</h5></label>
+            <select name="gender" id="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Trans">Trans</option>
+            </select>
+            <br>
+            <div>
+                <label for="email" class="block text-gray-800 font-semibold text-sm">
+                    <h4>Email</h4>
+                </label>
+                <input type="email" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" required name="email" id="email" placeholder="example@example.com"/>
+            </div>
+            <br>
+            <div>
+                <label for="phone" class="block text-gray-800 font-semibold text-sm">
+                    <h4>Phone Number</h4>
+                </label>
+                <input type="tel" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" required name="phone" id="phone" placeholder="(000) 000-0000"/>
+            </div>
+            <br>
+            <div>
+                <label for="address" class="block text-gray-800 font-semibold text-sm">
+                    <h4>Address</h4>
+                </label>
+                <input type="text" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" required id="address" placeholder="e.g., 123 Main Street"/>
+            </div>
+            <br>
+            <label for="nationality" class="block text-gray-800 font-semibold text-sm">
+              <h4>Nationality</h4>
+          </label>
+          <input type="text" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" required id="nationality" placeholder="e.g., 123 Main Street"/>
+            <br>
+            <div>
+                <label for="passport" class="block text-gray-800 font-semibold text-sm">
+                    <h4>Passport or EID Number</h4>
+                </label>
+                <input required type="text" style="width: 20cm;" class="block w-56 rounded-md py-1.5 px-2 ring-1 ring-inset ring-gray-400 focus:text-gray-800" name="passport" id="passport" placeholder="Enter Passport or EID Number"/>
+            </div>
+            <br><br>
+            <div>
+                <label for="companies" class="block text-gray-800 font-semibold text-sm">
+                    <h4>Your Organization</h4>
+                </label>
+                <select required id="companies" name="drop" onchange="toggleOtherCompany()">
+                    <option value="" disabled selected>Select your company</option> <!-- Placeholder -->
+                    <option value="Chalet Real Estate">Chalet Real Estate</option>
+                    <option value="Sami Real Estate">Sami Real Estate</option>
+                    <option value="Yash Real Estate">Yash Real Estate</option>
+                    <option value="Vikas Real Estate">Vikas Real Estate</option>
+                    <option value="Luxury Real Estate">Luxury Real Estate</option>
+                    <option value="Emaar Real Estate">Emaar Real Estate</option>
+                    <option value="Damac Real Estate">Damac Real Estate</option>
+                    <option value="Million Dreams Real Estate">Million Dreams Real Estate</option>
+                    <option value="Raj Properties">Raj Properties</option>
+                    <option value="Goat Reality">Goat Reality</option>
+                    <option value="Nestwood Real Estate">Nestwood Real Estate</option>
+                    <option value="Azizi Real Estate">Azizi Real Estate</option>
+                    <option value="Oasis Real Estate">Oasis Real Estate</option>
+                    <option value="Honey Singh Real Estate">Honey Singh Real Estate</option>
+                    <option value="Furjan Real Estate">Furjan Real Estate</option>
+                    <option value="Sports Real Estate">Sports Real Estate</option>
+                    <option value="Dubai Real Estate">Dubai Real Estate</option>
+                    <option value="Expo Real Estate">Expo Real Estate</option>
+                    <option value="DWC Real Estate">DWC Real Estate</option>
+                    <option value="Zayad Real Estate">Zayad Real Estate</option>
+                    <option value="Aldar Real Estate">Aldar Real Estate</option>
+                    <option value="WASL Real Estate">WASL Real Estate</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <br>
+            <!-- This section will be hidden initially -->
+            <!-- This section will be hidden initially -->
+  <div id="otherCompanyDiv" style="display: none;">
+    <label for="otherCompany">Please specify your organization</label>
+    <br> <br>
+    <input type="text" id="otherCompany" name="otherCompany" placeholder="Enter your company">
+  </div>
+            <br><br>
+            <div>
+                <label for="file1">Upload a file</label>
+                <br>
+                <label for="file1" class="labelFile">
+                    <input class="input" id="file1" type="file" accept=".pdf,.doc,.docx,.jpg,.png" />
+                    <span>
+                        <!-- SVG icon code -->
+                    </span>
+                    <p>Drag and drop your file here or click to select a file!</p>
+                </label>
+                <span id="fileInfo1" style="color: green;"></span>
+            </div>
+            <br><br><br>
+            <div>
+                <label for="file2">Upload a file</label>
+                <br>
+                <label for="file2" class="labelFile">
+                    <input class="input" id="file2" type="file" accept=".pdf,.doc,.docx,.jpg,.png" />
+                    <span>
+                        <!-- SVG icon code -->
+                    </span>
+                    <p>Drag and drop your file here or click to select a file!</p>
+                </label>
+                <span id="fileInfo2" style="color: green;"></span>
+            </div>
+            <input type="hidden" name="timeTaken" id="timeTaken" />
+            <br><br>
+                <!-- Captcha Display -->
+    <div class="captcha-box" id="captchaBox"></div>
+    <button type="button" onclick="generateCaptcha()">Refresh CAPTCHA</button><br><br>
+
+    <label for="captchaInput">Enter CAPTCHA:</label><br>
+    <input type="text" id="captchaInput" class="captcha-input" required><br><br>
+
+    <div class="error-message" id="captchaError">Incorrect CAPTCHA, please try again.</div>
+            <br><br>
+            <input type="submit" value="Submit" id="button"/>
+</fieldset>
+    </form>
+</body>
+</html>
